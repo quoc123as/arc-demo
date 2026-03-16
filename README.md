@@ -1,7 +1,11 @@
-# Arc Crosschain Treasury Demo
+Arc Testnet Faucet
 
-A simple demo project exploring how applications can consolidate USDC liquidity across chains using Arc as a coordination layer.
+A simple faucet interface for developers testing Arc ecosystem tools.
 
-The goal is to experiment with crosschain treasury management using CCTP and Arc Gateway.
+Goal:
+Help builders easily request test USDC while experimenting with crosschain liquidity coordination.
 
-Built as a lightweight prototype to understand how Arc can unify fragmented stablecoin liquidity across ecosystems.
+Stack:
+HTML
+Vercel
+Arc ecosystem
