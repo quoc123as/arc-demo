@@ -1,35 +1,46 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Arc Liquidity Demo</title>
+<title>Arc Testnet Faucet</title>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+margin-top:80px;
+background:#f5f5f5;
+}
+
+button{
+padding:12px 25px;
+font-size:16px;
+background:black;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+</style>
 </head>
 
-<body style="font-family: Arial; text-align:center; margin-top:80px">
+<body>
 
-<h1>Arc Crosschain Liquidity Demo</h1>
+<h1>Arc Testnet Faucet</h1>
 
 <p>
-This mini project explores how Arc could coordinate USDC liquidity
-across multiple blockchains.
+Request small amounts of test USDC to experiment with the Arc ecosystem.
 </p>
 
-<h3>Concept</h3>
+<input placeholder="Enter wallet address" style="padding:10px;width:300px">
 
-<p>
-Apps often deploy on many chains but treasury liquidity becomes fragmented.
-Arc could act as a coordination layer to unify stablecoin balances.
-</p>
+<br><br>
 
-<h3>Stack</h3>
+<button onclick="alert('Test USDC request submitted!')">
+Request Test USDC
+</button>
 
-<p>
-Arc • CCTP • Gateway
-</p>
-
-<h3>Status</h3>
-
-<p>
-Early experiment for understanding crosschain treasury design.
+<p style="margin-top:40px">
+Built as a simple experiment for Arc builders.
 </p>
 
 </body>
