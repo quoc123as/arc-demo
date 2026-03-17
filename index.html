@@ -1,47 +1,78 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Arc Testnet Faucet</title>
-<style>
-body{
-font-family:Arial;
-text-align:center;
-margin-top:80px;
-background:#f5f5f5;
-}
-
-button{
-padding:12px 25px;
-font-size:16px;
-background:black;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-</style>
+  <title>Arc USDC Demo</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+      background: #0f172a;
+      color: white;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: white;
+      cursor: pointer;
+    }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>Arc Testnet Faucet</h1>
+<div class="card">
+  <h1>Arc Faucet + USDC Demo</h1>
+  <p>Balance: <span id="balance">0.00</span> USDC</p>
 
-<p>
-Request small amounts of test USDC to experiment with the Arc ecosystem.
-</p>
+  <button onclick="faucet()">Get 0.05 USDC</button>
+  <button onclick="send()">Send 0.01 USDC</button>
 
-<input placeholder="Enter wallet address" style="padding:10px;width:300px">
+  <h3>Transaction History</h3>
+  <ul id="history"></ul>
+</div>
 
-<br><br>
+<script>
+  let balance = 0;
+  let history = [];
 
-<button onclick="alert('Test USDC request submitted!')">
-Request Test USDC
-</button>
+  function updateUI() {
+    document.getElementById("balance").innerText = balance.toFixed(2);
+    const list = document.getElementById("history");
+    list.innerHTML = "";
+    history.forEach(item => {
+      const li = document.createElement("li");
+      li.innerText = item;
+      list.appendChild(li);
+    });
+  }
 
-<p style="margin-top:40px">
-Built as a simple experiment for Arc builders.
-</p>
+  function faucet() {
+    balance += 0.05;
+    history.push("Received 0.05 USDC from faucet");
+    updateUI();
+  }
+
+  function send() {
+    if (balance >= 0.01) {
+      balance -= 0.01;
+      history.push("Sent 0.01 USDC (Tx: 0x123...)");
+      updateUI();
+    } else {
+      alert("Not enough balance");
+    }
+  }
+
+  updateUI();
+</script>
 
 </body>
 </html>
