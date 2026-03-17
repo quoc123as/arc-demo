@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Arc USDC Demo</title>
+  <title>Arc USDC Faucet Demo</title>
   <style>
     body {
       font-family: Arial;
@@ -19,11 +19,19 @@
       color: white;
       cursor: pointer;
     }
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 80%;
+      margin: 10px 0;
+    }
     .card {
       background: #1e293b;
       padding: 20px;
       border-radius: 12px;
       display: inline-block;
+      width: 300px;
     }
   </style>
 </head>
@@ -31,9 +39,15 @@
 
 <div class="card">
   <h1>Arc Faucet + USDC Demo</h1>
+
   <p>Balance: <span id="balance">0.00</span> USDC</p>
 
   <button onclick="faucet()">Get 0.05 USDC</button>
+
+  <br>
+
+  <input id="address" placeholder="Enter wallet address">
+
   <button onclick="send()">Send 0.01 USDC</button>
 
   <h3>Transaction History</h3>
@@ -62,9 +76,16 @@
   }
 
   function send() {
+    const address = document.getElementById("address").value;
+
+    if (!address) {
+      alert("Please enter wallet address");
+      return;
+    }
+
     if (balance >= 0.01) {
       balance -= 0.01;
-      history.push("Sent 0.01 USDC (Tx: 0x123...)");
+      history.push("Sent 0.01 USDC to " + address);
       updateUI();
     } else {
       alert("Not enough balance");
