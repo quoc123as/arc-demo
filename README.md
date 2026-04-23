@@ -1,66 +1,130 @@
+🚀 Send NFT & USDC (Web3 Demo)
 
-# 🚀 Send NFT & USDC (Testnet)
+"License" (https://img.shields.io/badge/license-MIT-green)
+"Status" (https://img.shields.io/badge/status-active-success)
+"Network" (https://img.shields.io/badge/network-Sepolia-blue)
+"Built With" (https://img.shields.io/badge/built%20with-ethers.js-purple)
 
-A simple Web3 demo that allows users to connect wallet and send NFT (ERC721) or USDC (ERC20) on testnet.
+A lightweight Web3 application that allows users to send NFTs (ERC721) and transfer USDC (ERC20) on testnet.
 
 ---
 
-## ✨ Features
+📸 Demo Preview
 
-- 🔗 Connect wallet (MetaMask)
-- 🖼 Send NFT (ERC721)
+"App Screenshot" (https://via.placeholder.com/800x400?text=NFT+%26+USDC+App)
+
+«Replace this image with your real screenshot for better presentation.»
+
+---
+
+✨ Features
+
+- 🔗 Connect wallet via MetaMask
+- 🖼 Transfer NFT (ERC721)
 - 💵 Send USDC (ERC20)
-- ⚡ Fast and simple UI
+- ⚡ Simple and clean UI
 - 🌐 Deployed on Vercel
 
 ---
 
-## 🛠 Tech Stack
+🛠 Tech Stack
 
 - HTML / CSS / JavaScript
 - Ethers.js
-- MetaMask Wallet
-- Testnet (Sepolia)
+- MetaMask
+- Sepolia Testnet
 
 ---
 
-## 🚀 Live Demo
+🚀 Live Demo
 
 👉 https://arc-demo-sand.vercel.app/
 
 ---
 
-## 📦 How to Use
+📦 Getting Started
 
-### 1. Connect Wallet
-- Click **Connect Wallet**
-- Approve in MetaMask
+1. Clone repository
 
-### 2. Send NFT
-- Enter recipient address
-- Enter Token ID
-- Click **Send NFT**
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 
-### 3. Send USDC
-- Enter recipient address
-- Enter amount
-- Click **Send USDC**
+2. Run locally
 
----
+Just open:
 
-## ⚠️ Notes
+index.html
 
-- This is a **testnet demo**, not mainnet
-- NFT transfer only works if you own the NFT
-- USDC transfer requires testnet balance
-- Make sure your wallet is on **Sepolia network**
+Or use Live Server in VS Code.
 
 ---
 
-## 🔧 Configuration
+⚙️ Configuration
 
-You can change contract addresses in `index.html`:
+Update contract addresses in "index.html":
 
-```js
-const NFT_ADDRESS = "YOUR_NFT_CONTRACT";
-const USDC_ADDRESS = "YOUR_USDC_CONTRACT";
+const NFT_ADDRESS = "YOUR_NFT_CONTRACT_ADDRESS";
+const USDC_ADDRESS = "YOUR_USDC_CONTRACT_ADDRESS";
+
+---
+
+🧪 How It Works
+
+🔹 Send NFT
+
+1. Connect wallet
+2. Input recipient address
+3. Enter token ID
+4. Confirm transaction
+
+🔹 Send USDC
+
+1. Connect wallet
+2. Input recipient address
+3. Enter amount
+4. Confirm transaction
+
+---
+
+⚠️ Notes
+
+- This project runs on testnet (Sepolia)
+- You must own the NFT to transfer it
+- You need testnet USDC to send tokens
+- MetaMask is required
+
+---
+
+🎯 Use Cases
+
+- Web3 learning & practice
+- NFT interaction demo
+- Token transfer demo
+- Builder programs (Arc, hackathons)
+
+---
+
+🚧 Roadmap
+
+- [ ] Display NFTs in wallet
+- [ ] Transaction history
+- [ ] UI improvements
+- [ ] Marketplace (buy/sell NFT)
+
+---
+
+👨‍💻 Author
+
+- Quốc Hồ
+
+---
+
+⭐ Support
+
+If you find this project useful, please consider giving it a ⭐
+
+---
+
+📄 License
+
+This project is licensed under the MIT License.
