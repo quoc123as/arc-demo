@@ -1,98 +1,71 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Arc USDC Faucet Demo</title>
+  <title>NFT Marketplace</title>
   <style>
     body {
-      font-family: Arial;
-      text-align: center;
-      margin-top: 50px;
       background: #0f172a;
       color: white;
+      font-family: Arial;
+      text-align: center;
     }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #22c55e;
-      color: white;
-      cursor: pointer;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
     }
-    input {
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      width: 80%;
-      margin: 10px 0;
-    }
+
     .card {
       background: #1e293b;
-      padding: 20px;
+      padding: 15px;
       border-radius: 12px;
-      display: inline-block;
-      width: 300px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      background: #22c55e;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      margin-top: 10px;
     }
   </style>
 </head>
+
 <body>
 
-<div class="card">
-  <h1>Arc Faucet + USDC Demo</h1>
+<h1>RWA NFT Marketplace</h1>
 
-  <p>Balance: <span id="balance">0.00</span> USDC</p>
+<div class="grid">
 
-  <button onclick="faucet()">Get 0.05 USDC</button>
+  <div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>House #001</h3>
+    <p>100 USDC</p>
+    <button onclick="buyNFT('House')">Buy</button>
+  </div>
 
-  <br>
+  <div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>Gold #002</h3>
+    <p>50 USDC</p>
+    <button onclick="buyNFT('Gold')">Buy</button>
+  </div>
 
-  <input id="address" placeholder="Enter wallet address">
-
-  <button onclick="send()">Send 0.01 USDC</button>
-
-  <h3>Transaction History</h3>
-  <ul id="history"></ul>
 </div>
 
 <script>
-  let balance = 0;
-  let history = [];
-
-  function updateUI() {
-    document.getElementById("balance").innerText = balance.toFixed(2);
-    const list = document.getElementById("history");
-    list.innerHTML = "";
-    history.forEach(item => {
-      const li = document.createElement("li");
-      li.innerText = item;
-      list.appendChild(li);
-    });
-  }
-
-  function faucet() {
-    balance += 0.05;
-    history.push("Received 0.05 USDC from faucet");
-    updateUI();
-  }
-
-  function send() {
-    const address = document.getElementById("address").value;
-
-    if (!address) {
-      alert("Please enter wallet address");
-      return;
-    }
-
-    if (balance >= 0.01) {
-      balance -= 0.01;
-      history.push("Sent 0.01 USDC to " + address);
-      updateUI();
-    } else {
-      alert("Not enough balance");
-    }
-  }
-
-  updateUI();
+function buyNFT(name) {
+  alert("Bought " + name);
+}
 </script>
 
 </body>
